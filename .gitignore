@@ -23,4 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-client_secret_528992441871-72i8f5fkqa0g0a054v7ia0eb31sqhluu.apps.googleusercontent.com.jsonatuu
+client_secret_*.json
