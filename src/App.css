@@ -1,0 +1,342 @@
+/* Reset e estilo do corpo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fdd835; /* Amarelo futurístico */
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Layout principal */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #fbff00;
+}
+
+/* Container principal com duas colunas */
+.main-container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  min-height: 600px;
+}
+
+/* Lado esquerdo - Imagem/Cinema */
+.cinema-side {
+  flex: 1;
+  background: linear-gradient(135deg, #000000 0%, #f7ffbb 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  color: #fff;
+  position: relative;
+}
+
+.cinema-image {
+  width: 100%;
+  height: 300px;
+  background-image: url('/images/claquete.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cinema-side h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cinema-side p {
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Lado direito - Login/Cadastro */
+.auth-side {
+  flex: 1;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Abas de navegação */
+.auth-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+  color: #7c4dff;
+  border-bottom-color: #7c4dff;
+}
+
+.auth-tab:hover {
+  color: #7c4dff;
+}
+
+/* Container de login/cadastro */
+.login-container {
+  text-align: left;
+}
+
+/* Título */
+.auth-title {
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* Botões de login social */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.social-login button:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.social-login button:first-child {
+  border: 1px solid #dadce0;
+}
+
+.social-login button:last-child {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.social-login button:last-child:hover {
+  background-color: #333;
+}
+
+/* Ícones dos botões sociais (.png corrigidos) */
+.social-login button .icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Linha divisória */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.divider span {
+  padding: 0 1rem;
+}
+
+/* Campos de entrada */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  transition: border-color 0.2s ease;
+}
+
+.input-group:focus-within {
+  border-bottom-color: #7c4dff;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+
+/* Ícones dos inputs (.png corrigidos) */
+.input-group .input-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+/* Botão de alternar visibilidade da senha */
+.toggle-password {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* Botão de submit */
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #7c4dff, #651fff);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #651fff, #7c4dff);
+  transform: translateY(-1px);
+  box-shadow: 0px 6px 20px rgba(124, 77, 255, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Link "Esqueceu sua senha?" */
+.forgot-password {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #7c4dff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: #651fff;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .cinema-side {
+    min-height: 250px;
+    padding: 2rem 1.5rem;
+  }
+
+  .cinema-image {
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .cinema-side h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-side {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .main-container {
+    border-radius: 15px;
+  }
+
+  .cinema-side {
+    padding: 1.5rem;
+  }
+
+  .auth-side {
+    padding: 1.5rem;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+}
